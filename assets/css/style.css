@@ -613,7 +613,10 @@ img.leveitating-image {
 }
 .poster_upcoming img {
   max-width: 100%;
+  max-height: 60rem;
   height: auto;
+  width: auto;
+  object-fit: contain;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.5);
 }
@@ -637,10 +640,77 @@ img.leveitating-image {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  background: blue;
-  color: white;
-  text-decoration: none;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  text-decoration:solid;
   border-radius: 5px;
+}
+
+/* Event Details Styling */
+.event_details {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  border-left: 4px solid var(--bg-sunglow);
+}
+
+.event_details p {
+  margin: 10px 0;
+  font-size: 2rem;
+  color: var(--text-white);
+}
+
+/* Countdown Timer Styling */
+.countdown_timer {
+  margin: 30px 0;
+}
+
+.countdown_timer h3 {
+  color: var(--text-sunglow);
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.timer_display {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.time_unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 20px;
+  border-radius: 10px;
+  min-width: 80px;
+  border: 2px solid var(--bg-sunglow);
+  transition: transform 0.3s ease;
+}
+
+.time_unit:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+.time_value {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--bg-sunglow);
+  line-height: 1;
+}
+
+.time_label {
+  font-size: 1.1rem;
+  color: var(--text-white-alpha-60);
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 768px) {
@@ -648,6 +718,23 @@ img.leveitating-image {
       flex-direction: column;
       text-align: center;
       height: auto;
+  }
+  
+  .timer_display {
+      gap: 10px;
+  }
+  
+  .time_unit {
+      min-width: 70px;
+      padding: 10px 15px;
+  }
+  
+  .time_value {
+      font-size: 2rem;
+  }
+  
+  .event_details p {
+      font-size: 1rem;
   }
 }
 
